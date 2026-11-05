@@ -1,0 +1,122 @@
+<!-- ================= HOME PAGE ================= -->
+<!-- index.html -->
+<html lang="en">
+
+<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ravindra Bedade | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    // Apply saved theme AFTER body is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+      } else if (!savedTheme) {
+        // Auto system theme (first visit only)
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.body.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    });
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+
+  <header>
+    <strong>Ravindra Bedade</strong>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <button onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="images/MY (2).jpg" alt="Profile Photo">
+    <div class="hero-1">
+      <h1>Hi! I'm Ravindra Bedade </h1>
+      <h3 style="margin-top: -20px; margin-bottom: 35px;">Frontend Developer & Software Engineer</h3>
+      <p color="white">
+        <!-- I'm a <b> Frontend Developer and Artificial Intelligence & Data Science Engineering student with a strong background in Computer Technology.</b>
+        Experienced in developing responsive user interfaces and converting design mockups into clean, functional web pages using <b>HTML5,
+        CSS3, JavaScript, Bootstrap, Tailwind CSS & React Js </b>. Hands-on experience with Git, GitHub, REST APIs, responsive web design, cross-browser
+        compatibility, frontend debugging, and <b> web performance through live client projects and web-development training.</b>
+      </p> -->
+
+      <p class="about-me">
+        I'm a <b> Computer Science and Engineering </b> student with a specialization in Artificial Intelligence and
+        Data Science at Genba Sopanrao Moze College Of Engineering, Balewadi, Pune & I hold a Diploma in Computer
+        Technology from K.K. Wagh Polytechnic, Nashik. <br><br>
+        I'm passionate about <b> Web Development </b> user-friendly solutions using technologies like
+        HTML, CSS, JavaScript, React.js, Tailwind CSS, Bootstrap, Java (Basics), Python (Basics).
+      </p>
+      <hr>
+      <div class="buttons">
+        <a class="btn resume" href="Assets\Ravindra Bedade.pdf" target="_blank">Resume</a>
+        <a class="btn projects" href="projects.html">Projects</a>
+        <a class="btn contact" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-box">
+        <h4><b> Phone </b></h4>
+        <p> <b>+91 8799923345</b></p>
+      </div>
+
+      <div class="footer-box">
+        <h4><b> Email </b></h4>
+        <p> <b>bedaderavi03@gmail.com</b></p>
+      </div>
+
+      <div class="footer-box">
+        <h4><b> Social Media </b></h4>
+        <div class="social-icons">
+          <!-- Font Awesome CDN -->
+
+          <a href="https://www.linkedin.com/in/ravindra-bedade-228161281" target="_blank" class="linkedin-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://github.com/ravindrabedade02" target="_blank" class="github-icon">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://www.instagram.com/ravindra.bedade02?igsh=cmx5Y2tyaTZzd2tt" target="_blank"
+            class="instagram-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+
+        </div>
+      </div>
+
+      <div class="footer-box copyright">
+        <p>© 2026 By Ravindra Bedade !</p>
+        <p class="powered">Powered & secured by <span>RB</span></p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
