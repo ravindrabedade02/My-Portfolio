@@ -1,0 +1,144 @@
+<!-- ================= PROJECTS PAGE ================= -->
+<!-- projects.html -->
+<html lang="en">
+
+<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ravindra Bedade | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    // Apply saved theme AFTER body is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+      } else if (!savedTheme) {
+        // Auto system theme (first visit only)
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.body.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    });
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+
+  <header>
+    <strong>Ravindra Bedade</strong>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <button onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <div>
+        <h3>"Flavour" Ice-cream Parlour</h3>
+        <p style="font-size: 20px;">
+          "Welcome to our website "Flavour" Ice-cream Parlour, In this Webaite your favourite ice cream is crafted from
+          nature’s finest selection of fruits, the creamiest milk and zero preservatives, all churned together with a
+          touch of magic and a lot of love. It’s crafted for those moments where every laugh echoes louder, every smile
+          feels warmer, and every spoonful tastes better with your closest friends."
+        </p>
+      </div>
+      <img src="images/parlour.png" height="290" width="435" alt="Project Image">
+    </div>
+    <hr>
+    <div class="project">
+      <div>
+        <h3>"My-Ecomm-Mart"</h3>
+        <p style="font-size: 20px;">
+          "My-Ecomm-Mart is a modern, responsive e-commerce storefront developed using React.js, Vite, and Tailwind CSS.
+          The project aims to provide users with a clean, attractive, and user-friendly online shopping experience
+          through a well-structured product browsing interface." <br>
+          * The following features could be added to make the project a more complete shopping platform: <br>
+          - User registration and login. <br>
+          - Add to Cart and Wishlist functionality. <br>
+          - Product search and filtering. <br>
+          - Product detail pages. <br>
+          - Quantity management. <br>
+          - Checkout and order management.
+        </p>
+      </div>
+      <img src="images\E-Comm.png" height="250" width="435" alt="Project Image">
+    </div>
+    <hr>
+    <div class="project">
+      <div>
+        <h3>"Amazone Prime Video"</h3>
+        <p style="font-size: 20px;">
+          "An Amazon Prime Video-inspired streaming platform landing page. It recreates the promotional homepage with
+          entertainment-focused sections, membership information, and a responsive website layout." <br>
+          Developed a responsive frontend clone of the Amazon Prime Video website using HTML5, CSS3, and JavaScript. The
+          project recreates the visual design and user interface of the original Prime Video landing page, providing an
+          entertainment-focused browsing experience.
+        </p>
+      </div>
+      <img src="images\prime-video.png" height="250" width="435" alt="Project Image">
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-box">
+        <h4><b> Phone </b></h4>
+        <p> +91 8799923345</p>
+      </div>
+
+      <div class="footer-box">
+        <h4><b> Email </b></h4>
+        <p>bedaderavi03@gmail.com</p>
+      </div>
+
+      <div class="footer-box">
+        <h4><b> Social Media </b></h4>
+        <div class="social-icons">
+          <!-- Font Awesome CDN -->
+
+          <a href="https://www.linkedin.com/in/ravindra-bedade-228161281" target="_blank" class="linkedin-icon">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a href="https://github.com/ravindrabedade02" target="_blank" class="github-icon">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://www.instagram.com/ravindraa.bedade02?igsh=cmx5Y2tyaTZzd2tt" target="_blank"
+            class="instagram-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+
+        </div>
+      </div>
+
+      <div class="footer-box copyright">
+        <p>© 2026 By Ravindra Bedade !</p>
+        <p class="powered">Powered & secured by <span>RB</span></p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+
+</html>
