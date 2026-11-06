@@ -496,6 +496,7 @@ body.dark .social-icons a {
   grid-template-columns: 300px 1fr;
   /* Matches the left-heading layout */
   gap: 40px;
+  /* color: white; */
   margin-bottom: 60px;
 }
 
