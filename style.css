@@ -280,15 +280,30 @@ hr {
 .project {
   display: flex;
   align-items: center;
-  margin: -20px 20px;
+  margin: 20px 20px;
   height: 71vh;
   gap: 50px;
+  margin-top: 0 !important;
+  height: auto !important;
 }
+
+h2 {
+  margin-bottom: 50px !important; 
+}
+
+/* .projects-page-title, 
+h1 {
+  margin-bottom: 50px; 
+} */
 
 .project img {
   border-radius: 15px;
   border: 1px solid black;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.8s ease;
+}
+.project img:hover {
+  transform: translateY(-10px) scale(1.05);
 }
 
 /* =============================
@@ -464,64 +479,51 @@ body.dark .social-icons a {
 }
 
 /* =============================
-    NEW RESUME GRID & NAV
+    RESUME PAGE ALIGNMENT FIXES
 ============================= */
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* .logo-area .dot {
-  width: 15px;
-  height: 15px;
-  background: var(--primary);
-  border-radius: 50%;
-} */
-
-.logo-area span {
-  font-size: 14px;
-  color: var(--gray);
+.resume-container {
+  max-width: 100% !important;
+  width: 100%;
+  padding: 20px 70px; /* Matches the header and projects page side spacing */
+  margin: 0 !important;
 }
 
 .page-title {
-  margin-top: 40px;
-  margin-bottom: 60px;
-  font-size: 48px;
+  margin-bottom: 40px;
   font-weight: bold;
 }
 
 .resume-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  /* Matches the left-heading layout */
+  grid-template-columns: 280px 1fr;
   gap: 40px;
-  /* color: white; */
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  padding: 0;
 }
 
 .grid-left h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   line-height: 1.2;
-
 }
 
 .resume-item {
   display: flex;
   gap: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .resume-item .date {
-  min-width: 120px;
-  font-size: 14px;
-  padding-top: 4px;
+  min-width: 130px;
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 2px;
 }
 
-.resume-item h4 {
-  font-size: 18px;
-  margin-bottom: 8px;
+.resume-item .details h3,
+.resume-item .details h4 {
+  font-size: 22px;
+  margin-bottom: 6px;
 }
 
 .resume-list {
@@ -534,22 +536,26 @@ body.dark .social-icons a {
   font-size: 17px;
 }
 
-.section-divider {
-  border: 0;
-  border-top: 1px solid #ddd;
-  margin: 40px 0;
+.resume-container .resume-grid {
+  padding-left: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-/* RESPONSIVE STACKING */
+/* Responsive adjustment for screens under 900px */
 @media (max-width: 900px) {
+  .resume-container {
+    padding: 20px;
+  }
+
   .resume-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
 
   .resume-item {
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
   }
 }
 
