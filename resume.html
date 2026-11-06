@@ -1,0 +1,202 @@
+<html lang="en">
+
+<body>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ravindra Bedade | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    // Apply saved theme AFTER body is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+      } else if (!savedTheme) {
+        // Auto system theme (first visit only)
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.body.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      }
+    });
+
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+
+
+    <header>
+      <div class="logo-area">
+        <div class="dot"></div>
+        <strong>Ravindra Bedade</strong> <span>Junior Developer</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <button onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+      </nav>
+    </header>
+
+    <main class="resume-container">
+      <h1 class="page-title">Resume</h1>
+
+      <section class="resume-grid">
+        <div class="grid-left">
+          <h2>Work Experience</h2>
+        </div>
+        <div class="grid-right">
+          <div class="resume-item">
+            <span class="date">Jan 26 – Mar 26</span>
+            <div class="details">
+              <h3>Global Source Technology</h3>
+              <p style="font-style: italic; margin-top: -10px; font-size: 14px;">
+                Web Development Intern
+              </p>
+              <p class="experience-desc">
+                Worked as a Web Development Intern at Global Source Technology,
+                gaining practical experience in frontend web development and website design.
+                Developed and maintained responsive web pages using HTML5, CSS3,
+                Bootstrap, and JavaScript.
+              </p> <br>
+              <p class="responsibilities">
+                ~ Key Responsibilities:<br>
+                - Designed responsive and user-friendly web pages using HTML, CSS,
+                Bootstrap, and JavaScript.<br>
+                - Designed website layouts with a focus on usability and visual consistency.<br>
+                - Implemented responsive navigation bars, sections, and reusable UI elements.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-left">
+          <!-- <h2>Work Experience</h2> -->
+        </div>
+        <div class="grid-right">
+          <div class="resume-item">
+            <span class="date">Jun 24 – Aug 24</span>
+            <div class="details">
+              <h3> Cyber Sanskar </h3>
+              <p style="font-style: italic; margin-top: -10px; font-size: 14px;">Web Development Trainee</p>
+              <p class="experience-desc">Completed a three-month Web Development Training Program at Cyber
+                Sanskar, developing a strong foundation in frontend web development and website design. Gained practical
+                knowledge of HTML5, CSS3, Bootstrap, and JavaScript while learning to create structured, responsive, and
+                user-friendly web pages. </p> <br>
+              <p class="responsibilities"> ~ Key Responsibilities & Learning: <br>
+                - Learned and implemented HTML5 for creating structured web pages. <br>
+                - Applied CSS3 for website styling, layouts, and visual design. <br>
+                - Used Bootstrap to develop responsive website components. <br>
+                - Gained hands-on experience in JavaScript for interactive web elements. <br>
+                - Practiced JavaScript fundamentals and basic DOM manipulation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <section class="resume-grid">
+        <div class="grid-left">
+          <h2>Education</h2>
+        </div>
+        <div class="grid-right">
+          <div class="resume-item">
+            <span class="date">2021 – 2024</span>
+            <div class="details">
+              <h4>K K Wagh Polytechnic, Nashik</h4>
+              <p>MSBTE Diploma - Computer Technology |<br>
+                Percentage: 85.18% <br>
+                Grade: First Class</p>
+            </div>
+          </div>
+
+          <div class="resume-item">
+            <span class="date">2024 - 2027</span>
+            <div class="details">
+              <h4>Genba Sopanrao Moze College Of Engineering, Pune</h4>
+              <p>SPPU B.E - Artificial Intelligence and Data Science |<br>
+                CGPA: 8.36/10 <br>
+                <b>- Currently Pursuing</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <section class="resume-grid">
+        <div class="grid-left">
+          <h2>Skills<br>& Expertise</h2>
+        </div>
+        <div class="grid-right">
+          <ul class="resume-list">
+            <li><b>Frontend: </b> HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, ReactJs, NodeJs, Responsive Web
+              Design
+            </li>
+            <li><b>Web & APIs: </b> REST APIs, API Integration, Web Performance, UI Development, Frontend Debugging
+            </li>
+            <li><b>Programming Languages: </b> C++, Java (Basic), Python (Basic) </li>
+            <li><b>Tools: </b> Git, GitHub, Visual Studio Code, Netlify, Figma </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+
+        <div class="footer-box">
+          <h4><b> Phone </b></h4>
+          <p> +91 8799923345</p>
+        </div>
+
+        <div class="footer-box">
+          <h4><b> Email </b></h4>
+          <p>bedaderavi03@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+          <h4><b> Social Media </b></h4>
+          <div class="social-icons">
+            <!-- Font Awesome CDN -->
+
+            <a href="https://www.linkedin.com/in/ravindra-bedade-228161281" target="_blank" class="linkedin-icon">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/ravindrabedade02" target="_blank" class="github-icon">
+              <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.instagram.com/ravindraa.bedade02?igsh=cmx5Y2tyaTZzd2tt" target="_blank"
+              class="instagram-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+
+          </div>
+        </div>
+
+        <div class="footer-box copyright">
+          <p>© 2026 By Ravindra Bedade !</p>
+          <p class="powered">Powered & secured by <span>RB</span></p>
+        </div>
+
+      </div>
+    </footer>
+
+  </body>
+
+</html>
