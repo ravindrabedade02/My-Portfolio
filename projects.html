@@ -1,53 +1,51 @@
-<!-- ================= PROJECTS PAGE ================= -->
-<!-- projects.html -->
+<!DOCTYPE html>
 <html lang="en">
-
-<body>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ravindra Bedade | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
-    // Apply saved theme AFTER body is loaded
-    document.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("theme");
-
-      if (savedTheme === "dark") {
-        document.body.classList.add("dark");
-      } else if (!savedTheme) {
-        // Auto system theme (first visit only)
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          document.body.classList.add("dark");
-          localStorage.setItem("theme", "dark");
+    (function () {
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
         }
-      }
-    });
-
-    function toggleDark() {
-      document.body.classList.toggle("dark");
-
-      if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
-    }
+      } catch (e) {}
+    })();
   </script>
+  <title>Ravindra Bedade | Portfolio - Projects</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+</head>
 
+<body>
   <header>
     <strong style="font-size: 2rem; font-weight: bold;">Ravindra Bedade</strong>
-    <nav>
+    <div class="mobile-nav-actions">
+      <button class="mobile-theme-btn" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" onclick="toggleMenu()" aria-expanded="false">
+        <svg class="icon-bars" width="22" height="22" viewBox="0 0 448 512" fill="currentColor">
+          <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+        </svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 384 512" fill="currentColor" style="display:none;">
+          <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+        </svg>
+      </button>
+    </div>
+    <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="resume.html">Resume</a>
-      <a href="projects.html">Projects</a>
+      <a href="projects.html" class="active">Projects</a>
       <a href="contact.html">Contact</a>
-      <button onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+      <button class="desktop-theme-btn" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
     </nav>
   </header>
 
   <section>
     <h2>Projects</h2>
+
     <div class="project">
       <div>
         <h3>"Flavour" Ice-cream Parlour</h3>
@@ -58,9 +56,11 @@
           feels warmer, and every spoonful tastes better with your closest friends."
         </p>
       </div>
-      <img src="images/parlour.png" height="290" width="435" alt="Project Image">
+      <img src="images/parlour.png" height="290" width="435" alt="Project Image" loading="lazy" decoding="async">
     </div>
+
     <hr>
+
     <div class="project">
       <div>
         <h3>"My-Ecomm-Mart"</h3>
@@ -77,9 +77,11 @@
           - Checkout and order management.
         </p>
       </div>
-      <img src="images\E-Comm.png" height="250" width="435" alt="Project Image">
+      <img src="images/E-Comm.png" height="230" width="435" alt="Project Image" loading="lazy" decoding="async">
     </div>
+
     <hr>
+
     <div class="project">
       <div>
         <h3>"Amazone Prime Video"</h3>
@@ -91,7 +93,7 @@
           entertainment-focused browsing experience.
         </p>
       </div>
-      <img src="images\prime-video.png" height="250" width="435" alt="Project Image">
+      <img src="images/prime-video.png" height="20" width="435" alt="Project Image" loading="lazy" decoding="async">
     </div>
 
   </section>
@@ -112,22 +114,17 @@
       <div class="footer-box">
         <h4><b> Social Media </b></h4>
         <div class="social-icons">
-          <!-- Font Awesome CDN -->
-
-          <a href="https://www.linkedin.com/in/ravindra-bedade-228161281" target="_blank" class="linkedin-icon">
-            <i class="fa-brands fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com/in/ravindra-bedade-228161281" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 448 512" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
           </a>
 
-          <a href="https://github.com/ravindrabedade02" target="_blank" class="github-icon">
-            <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/ravindrabedade02" target="_blank" class="github-icon" aria-label="GitHub">
+            <svg width="22" height="22" viewBox="0 0 496 512" fill="currentColor"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
           </a>
 
-          <a href="https://www.instagram.com/ravindraa.bedade02?igsh=cmx5Y2tyaTZzd2tt" target="_blank"
-            class="instagram-icon">
-            <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/ravindraa.bedade02?igsh=cmx5Y2tyaTZzd2tt" target="_blank" class="instagram-icon" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
           </a>
-
-
         </div>
       </div>
 
@@ -139,6 +136,118 @@
     </div>
   </footer>
 
-</body>
+  <script>
+    // Theme Management
+    function updateThemeButtons() {
+      const isDark = document.documentElement.classList.contains("dark");
+      const icon = isDark ? "☀️" : "🌙";
+      document.querySelectorAll(".desktop-theme-btn, .mobile-theme-btn, nav button").forEach(btn => {
+        btn.textContent = icon;
+      });
+    }
 
+    function toggleDark() {
+      document.body.classList.add("theme-transitioning");
+      const isCurrentlyDark = document.documentElement.classList.contains("dark");
+      const newTheme = isCurrentlyDark ? "light" : "dark";
+      if (newTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.body.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        document.body.classList.remove("dark");
+      }
+      localStorage.setItem("theme", newTheme);
+      updateThemeButtons();
+      setTimeout(() => {
+        document.body.classList.remove("theme-transitioning");
+      }, 350);
+    }
+
+    // Mobile Navigation Toggle
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      const toggleBtn = document.getElementById("menuToggle");
+      if (nav) {
+        nav.classList.toggle("active");
+        const isOpen = nav.classList.contains("active");
+        if (toggleBtn) {
+          const barsIcon = toggleBtn.querySelector(".icon-bars");
+          const closeIcon = toggleBtn.querySelector(".icon-close");
+          if (barsIcon && closeIcon) {
+            barsIcon.style.display = isOpen ? "none" : "block";
+            closeIcon.style.display = isOpen ? "block" : "none";
+          }
+          toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        }
+      }
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      const nav = document.getElementById("navMenu");
+      const toggleBtn = document.getElementById("menuToggle");
+      if (nav && nav.classList.contains("active")) {
+        if (!nav.contains(e.target) && !toggleBtn.contains(e.target)) {
+          toggleMenu();
+        }
+      }
+    });
+
+    // Close menu when clicking any nav link
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        const nav = document.getElementById("navMenu");
+        if (nav && nav.classList.contains("active")) {
+          toggleMenu();
+        }
+      });
+    });
+
+    // Reset menu on resize to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        const nav = document.getElementById("navMenu");
+        const toggleBtn = document.getElementById("menuToggle");
+        if (nav && nav.classList.contains("active")) {
+          nav.classList.remove("active");
+          if (toggleBtn) {
+            const barsIcon = toggleBtn.querySelector(".icon-bars");
+            const closeIcon = toggleBtn.querySelector(".icon-close");
+            if (barsIcon && closeIcon) {
+              barsIcon.style.display = "block";
+              closeIcon.style.display = "none";
+            }
+            toggleBtn.setAttribute("aria-expanded", "false");
+          }
+        }
+      }
+    });
+
+    // Instant Page Prefetch for Lightning-Fast Navigation
+    (function () {
+      const prefetched = new Set();
+      function prefetchPage(url) {
+        if (!url || prefetched.has(url) || url.startsWith("http") || url.includes(":")) return;
+        prefetched.add(url);
+        const link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = url;
+        document.head.appendChild(link);
+      }
+      document.querySelectorAll("nav a[href]").forEach(a => {
+        const href = a.getAttribute("href");
+        if (href && href.endsWith(".html")) {
+          a.addEventListener("mouseenter", () => prefetchPage(href), { passive: true });
+          a.addEventListener("touchstart", () => prefetchPage(href), { passive: true });
+        }
+      });
+      setTimeout(() => {
+        ["index.html", "resume.html", "projects.html", "contact.html"].forEach(prefetchPage);
+      }, 50);
+    })();
+
+    updateThemeButtons();
+  </script>
+</body>
 </html>
